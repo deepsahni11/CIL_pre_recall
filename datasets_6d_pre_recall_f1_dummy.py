@@ -22,7 +22,7 @@ def evalSamplingf(ytest,ypred):
     return f1_score(ytest,ypred)
 
 
-prediction_y = torch.load("datasets_6d_y_prediction.pt", map_location='cpu')#, allow_pickle = True)
+prediction_y = torch.load("datasets_6d_y_prediction.pt")#, map_location='cpu')#, allow_pickle = True)
 
 # prediction_y = torch.load('datasets_6d_y_prediction_y.pt')
 y_test_datasets_5d_resampled = np.load("datasets_6d_y_test_resampled.npy", allow_pickle = True)
@@ -59,7 +59,7 @@ for i in range(1350):
         
         
         for k in range(14):
-            ypred = prediction_y[(i)*3*14 + k + 14*(j)].numpy()
+            ypred = (prediction_y[(i)*3*14 + k + 14*(j)].data).cpu().numpy()
 
    
             try:
