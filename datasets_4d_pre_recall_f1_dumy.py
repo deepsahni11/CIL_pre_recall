@@ -22,10 +22,10 @@ def evalSamplingf(ytest,ypred):
     return f1_score(ytest,ypred)
 
 
-prediction_y = torch.load("E:\\Internships_19\\Internship(Summer_19)\\Imbalanced_class_classification\\Class_Imabalanced_Learning_Code\\CIL Code\\Final_repository_with_threshold\\Data_metrics\\prediction_y.pt", map_location='cpu')#, allow_pickle = True)
+prediction_y = torch.load("datasets_4d_y_prediction.pt", map_location='cpu')#, allow_pickle = True)
 
 # prediction_y = torch.load('datasets_4d_y_prediction_y.pt')
-y_test_datasets_5d_resampled = np.load("E:\\Internships_19\\Internship(Summer_19)\\Imbalanced_class_classification\\Class_Imabalanced_Learning_Code\\CIL Code\\Final_repository_with_threshold\\Data_metrics\\datasets_4d_y_test_resampled.npy", allow_pickle = True)
+y_test_datasets_5d_resampled = np.load("datasets_4d_y_test_resampled.npy", allow_pickle = True)
 
 # y_test_datasets_5d_resampled = load('../datasets_4d_y_test_resampled.npy')
 
@@ -45,7 +45,7 @@ matrixf1 =  np.empty((900*14,3))
 
 
 c  = 0
-for i in range(890,900):
+for i in range(900):
     
     row = ["Dataset" + str(i+1)]
     rowdash = ["Dataset" + str(i+1)]
