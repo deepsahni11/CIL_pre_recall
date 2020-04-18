@@ -38,9 +38,9 @@ data2 = []
 data3 = []
 
 
-matrixp =  np.empty((1350*14,3))
-matrixr =  np.empty((1350*14,3))
-matrixf1 =  np.empty((1350*14,3))
+matrixp =  np.empty((1350*14,21))
+matrixr =  np.empty((1350*14,21))
+matrixf1 =  np.empty((1350*14,21))
 
 
 c  = 0
@@ -50,7 +50,7 @@ for i in range(1350):
     rowdash = ["Dataset" + str(i+1)]
     row3 = ["Dataset" + str(i+1)]
     
-    for j in range(3):
+    for j in range(21):
         ytest = y_test_datasets_5d_resampled[(i)*21+j]
         c = c + 1
         
@@ -58,7 +58,7 @@ for i in range(1350):
         
         
         for k in range(14):
-            ypred = (prediction_y[(i)*3*14 + k + 14*(j)].data).cpu().numpy()
+            ypred = (prediction_y[(i)*21*14 + k + 14*(j)].data).cpu().numpy()
 
    
             try:
